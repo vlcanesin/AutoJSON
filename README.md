@@ -1,5 +1,5 @@
 # AutoJSON
-Script destinado à automatização da passagem de dados da página de artigos do INCT.
+Script destinado à automatização da listagem de artigos do INCT.
 
 # Como utilizar?
 1. Baixe o python (com o pip)
