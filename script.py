@@ -498,6 +498,7 @@ for text, link in list(zip(text_list, link_list)):
     artigo["versao"] = info[1]
     artigo["paginas"] = info[2]
     artigo["ano"] = int(info[3])
+    artigo["link"] = link
 
     for key in artigo:
         print(key, "=", artigo[key])
