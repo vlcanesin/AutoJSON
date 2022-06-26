@@ -73,5 +73,5 @@ for text, link in list(zip(text_list, link_list)):
     json_file.append(artigo)
 
 #if not entrei:
-with open('jsonForScript.json', 'w') as file:
-    json.dump(json_file, file)
+with open('jsonForScript.json', 'w', encoding='utf8') as file:
+    json.dump(json_file, file, ensure_ascii=False)
