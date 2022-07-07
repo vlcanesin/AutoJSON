@@ -5,10 +5,14 @@ file = json.load(f)
 
 for item in file:
     print(item)
-    arq = []
-    arq.append(item)
-    arq_name = (str(item["ano"]) + '/' + 'artigos' + '-' + str(item["ano"]) + '-' + str(item["nome"]).replace(':', '').replace('/', '-').replace('?', '') + '.json')
+    if (2020 - item["ano"]) == 10:
+        prec = 'A'
+    elif (2020 - item["ano"]) == 11:
+        prec = 'B'
+    else:
+        prec = (2020 - item["ano"])
+    arq_name = (str(item["ano"]) + '/' + str(prec) + '-' + 'artigos' + '-' + str(item["ano"]) + '-' + str(item["nome"]).replace(':', '').replace('/', '-').replace('?', '') + '.json')
     if(len(arq_name) > 64):
         arq_name = arq_name[:64] + '.json'
     with open(arq_name, 'w', encoding='utf8') as file:
-        json.dump(arq, file, ensure_ascii=False)
+        json.dump(item, file, ensure_ascii=False)
